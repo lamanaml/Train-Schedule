@@ -1,0 +1,21 @@
+
+.page {
+   
+    background-color: blue;
+     background-image: url("../images/worldmap.jpg");
+     opacity: .9;
+   
+ }
+
+
+ .jumbotron {
+     background-image: url("../images/trainbg2.jpg")
+ }
+
+
+ .card {
+  
+     margin: 20px;
+     padding: 20px;
+     
+ }
