@@ -24,7 +24,9 @@ var database = firebase.database();
 
     // First Time (pushed back 1 year to make sure it comes before current time)
     var firstTrainVarConverted = moment(firstTrainVar, "hh:mm").subtract(1, "years");
-    var currentTime = moment();
+    var currentTime = moment(currentTime).format("hh:mm");
+    console.log(firstTrainVarConverted)
+    console.log(currentTime)
 
     // Difference between the times
     var diffTime = moment().diff(moment(firstTrainVarConverted), "minutes");
@@ -40,7 +42,9 @@ var database = firebase.database();
 
     // Next Train
     var nextTrainVar = moment().add(tMinutesTillTrain, "minutes");
-    console.log("ARRIVAL TIME: " + moment(nextTrainVar).format("hh:mm"));
+   var reformatNextTrainVar = moment(nextTrainVar).format("HH:mm");
+  
+
 
 
         database.ref().push({
@@ -48,7 +52,7 @@ var database = firebase.database();
             Destination: destinationVar,
             First_Train: firstTrainVar,
             Frequency: frequencyVar,
-            //Next_Train: nextTrainVar,
+            Next_Train: reformatNextTrainVar,
             Minutes_Away: tMinutesTillTrain,
        
         });
@@ -68,8 +72,8 @@ var database = firebase.database();
         var newRow = "<tr><td>"+ s.Train + "</td>"  +
                    "<td>" + s.Destination + "</td>"  +
                    "<td>" + s.Frequency + "</td>"  +
-                   "<td>" + s.nextTrainVar +  "</td>"   +
-                   "<td>" + s.tMinutesTillTrain +"</td></tr>" 
+                    "<td>" + s.Next_Train +  "</td>"   +
+                   "<td>" + s.Minutes_Away +"</td></tr>" 
 
        
        $("tbody").prepend(newRow);
