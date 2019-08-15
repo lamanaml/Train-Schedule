@@ -26,7 +26,7 @@ var database = firebase.database();
     var firstTrainVarConverted = moment(firstTrainVar, "hh:mm").subtract(1, "years");
     var currentTime = moment(currentTime).format("hh:mm");
     console.log(firstTrainVarConverted)
-    console.log(currentTime)
+    
 
     // Difference between the times
     var diffTime = moment().diff(moment(firstTrainVarConverted), "minutes");
@@ -56,10 +56,7 @@ var database = firebase.database();
             Minutes_Away: tMinutesTillTrain,
        
         });
-         $('#train_name').text("");
-        $('#destination').text("");
-        $('#first_train').text("");
-        $('#frequency').text("");
+         
  
     // });
 
@@ -77,7 +74,10 @@ var database = firebase.database();
 
        
        $("tbody").prepend(newRow);
-       
+       $('#train_name').text("");
+        $('#destination').text("");
+        $('#first_train').text("");
+        $('#frequency').text("");
 
     });
 
