@@ -2,13 +2,26 @@
 
 
  .jumbotron {
-     background-image: url("../images/trainbg2.jpg")
+    background-color: #659dbd;
+    background-image: url("../images/train.jpg");
+   text-align: center;
+      padding: 20px;
  }
 
 
  .card {
-  
-     margin: 20px;
-     padding: 20px;
+    margin: 20px;
+    padding: 20px;
      
+}
+ 
+  .border {
+        padding: 20px;
+        background-color: #659dbd;
+        color:white;
+        font-size: 20px;
+        text-align: center;
+        font-family: 'Quicksand', sans-serif;
+
  }
+
